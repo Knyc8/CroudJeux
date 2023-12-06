@@ -1,0 +1,104 @@
+*{
+    margin: 0%;
+}
+
+
+
+
+.container{
+    margin: 0%;
+    padding: 2%;
+    background-color: #121212;
+    /* background-image: url("bg.jpg");
+    background-position: center;
+    background-size: cover; */
+}
+
+
+
+
+h1{
+    color: white;
+    font-family: sans-serif;
+    letter-spacing: 0.5em;
+    font-size: 3em;
+    margin-bottom: 5%;
+}
+
+
+
+
+section {
+    /* border: solid 0.1em rgba(255, 255, 255, 0.5); */
+    margin-left: 20%;
+    margin-right: 20%;
+}
+
+.displaycard {
+    display: flex;
+    flex-direction: column;
+    padding: 3em;
+    background-color: rgba(40, 40, 50, 0.80);
+    border-radius: 15px;
+    border: solid 0.01em lightblue;
+    margin: 8% 0% 8% 0%;
+}
+
+
+
+
+.displayname {
+    color: lightsteelblue;
+    font-family: sans-serif;
+    font-size: 1.5em;
+    text-decoration: none;
+}
+
+
+
+
+/* .displaycard:hover .displayname{
+    color: white;
+    cursor: pointer;
+    text-decoration: underline;
+} */
+
+
+.displayname:hover {
+    color: white;
+    cursor: pointer;
+    text-decoration: underline;
+}
+
+
+.info {
+    color: lightblue;
+    font-family: sans-serif;
+    display: none;
+    margin-top: 2%;
+}
+
+
+
+
+.displaycard:hover .info{
+    display: block;
+}
+span {
+    opacity: 50%;
+}
+
+
+.website {
+    color: lightblue;
+    font-family: sans-serif;
+    display: none;
+    margin-top: 2%;
+}
+
+
+.website:hover {
+    color: white;
+    cursor: pointer;
+    text-decoration: underline;
+}
