@@ -44,7 +44,14 @@ section {
     margin: 8% 0% 8% 0%;
 }
 
-
+.displaypost {
+    display: flex;
+    flex-direction: column;
+    padding: 3em;
+    background-color: rgba(40, 40, 50, 0.80);
+    border: solid 0.01em lightblue;
+    margin: 8% 0% 8% 0%;
+}
 
 
 .displayname {

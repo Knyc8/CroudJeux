@@ -1,18 +1,14 @@
 let currID = localStorage.getItem("currID");
+let currName = localStorage.getItem("currName")
 
 function init() {
     currID = 0;
 }
 
-const getJSON = async () => {
+const getJSONUsers = async () => {
     let users = fetch('https://jsonplaceholder.typicode.com/users')
         .then(response => response.json())
         .then(user => populateUsers(user))
-
-
-    // let posts = fetch('https://jsonplaceholder.typicode.com/posts')
-    //     .then(response => response.json())
-    //     .then(post => console.log(post))
 
 
     // let comments = fetch('https://jsonplaceholder.typicode.com/comments')
@@ -37,7 +33,7 @@ const getJSON = async () => {
 
 }
 
-function populateUsers(obj) {
+let populateUsers = (obj) =>{
     console.log(obj);
     const section = document.querySelector("section");
     const users = obj;
@@ -61,6 +57,7 @@ function populateUsers(obj) {
             currID = user.id;
             console.log(user.id);
             localStorage.setItem("currID", user.id);
+            localStorage.setItem("currName", user.name);
         })
 
         const username = document.createElement("p");
@@ -117,18 +114,58 @@ function populateUsers(obj) {
 }
 
 
-// const userClick = document.querySelectorAll(".displayname")[0];
-// userClick.addEventListener('click', ()=> {
-//     console.log(true)
-// })
-// console.log(document.querySelector(".displayName a"));
-
-// document.body.on("click", "a", function() {
-//     //this == the link that was clicked
-//     var href = $(this).attr("href");
-//     alert("You're trying to go to " + href);
-// });
-
-function initPosts() {
+const getJSONPosts = () => {
     console.log(currID)
+    let posts = fetch(`https://jsonplaceholder.typicode.com/users/${currID}/posts`)
+        .then(response => response.json())
+        .then(post => populatePosts(post))
+}
+
+const populatePosts = (obj) =>{
+    const section = document.getElementById('postsection')
+    const posts = obj;
+    console.log(posts);
+    posts.map(post => {
+        const postContainer = document.createElement("div");
+        postContainer.classList.add("displaypost");
+        console.log(post)
+        const displayPost = document.createElement("div");
+        displayPost.classList.add("displayPost");
+
+        const poster = document.createElement("h2");
+        poster.textContent = `Posted by: ${currName}`;
+        poster.classList.add("displayname");
+
+        const postTitle = document.createElement("h3");
+        postTitle.textContent = post.title;
+        postTitle.classList.add("displayname");
+
+        const postBody = document.createElement("p");
+        postBody.textContent = post.body;
+        postBody.classList.add("displayname");
+
+        const seeComments = document.createElement("p");
+        seeComments.textContent = "See Comments";
+        seeComments.classList.add("displayname");
+        hideComments = false;
+        seeComments.addEventListener("click", ()=> {
+            if (hideComments) {
+                seeComments.textContent = "See Comments";
+                hideComments = false;
+            }
+            else {
+                seeComments.textContent = "Hide Comments";
+                hideComments = true;
+            }
+        })
+
+        displayPost.appendChild(poster);
+        displayPost.appendChild(postTitle);
+        displayPost.appendChild(postBody);
+        displayPost.appendChild(seeComments);
+
+        postContainer.appendChild(displayPost)
+
+        section.appendChild(postContainer);
+    });
 }
