@@ -2,20 +2,11 @@
     margin: 0%;
 }
 
-
-
-
 .container{
     margin: 0%;
     padding: 2%;
     background-color: #121212;
-    /* background-image: url("bg.jpg");
-    background-position: center;
-    background-size: cover; */
 }
-
-
-
 
 h1{
     color: white;
@@ -25,11 +16,7 @@ h1{
     margin-bottom: 5%;
 }
 
-
-
-
 section {
-    /* border: solid 0.1em rgba(255, 255, 255, 0.5); */
     margin-left: 20%;
     margin-right: 20%;
 }
@@ -41,7 +28,7 @@ section {
     background-color: rgba(40, 40, 50, 0.80);
     border-radius: 15px;
     border: solid 0.01em lightblue;
-    margin: 8% 0% 8% 0%;
+    margin: 5% 0% 5% 0%;
 }
 
 .displaypost {
@@ -50,7 +37,7 @@ section {
     padding: 3em;
     background-color: rgba(40, 40, 50, 0.80);
     border: solid 0.01em lightblue;
-    margin: 8% 0% 8% 0%;
+    margin: 5% 0% 5% 0%;
 }
 
 
@@ -60,16 +47,6 @@ section {
     font-size: 1.5em;
     text-decoration: none;
 }
-
-
-
-
-/* .displaycard:hover .displayname{
-    color: white;
-    cursor: pointer;
-    text-decoration: underline;
-} */
-
 
 .displayname:hover {
     color: white;
@@ -85,16 +62,12 @@ section {
     margin-top: 2%;
 }
 
-
-
-
 .displaycard:hover .info{
     display: block;
 }
 span {
     opacity: 50%;
 }
-
 
 .website {
     color: lightblue;
@@ -103,9 +76,54 @@ span {
     margin-top: 2%;
 }
 
-
 .website:hover {
     color: white;
     cursor: pointer;
     text-decoration: underline;
 }
+
+.postText {
+    font-size: 1em;
+    color: lightblue;
+    font-family: sans-serif;
+    margin-top: 2%;
+    margin-bottom: 2%;
+}
+
+.postTitle {
+    color: lightsteelblue;
+    font-family: sans-serif;
+    font-size: 1.5em;
+    text-decoration: none;
+}
+
+.seeMore {
+    color: lightblue;
+    font-family: sans-serif;
+    margin-top: 2%;
+    margin-bottom: 0%;
+}
+
+.seeMore:hover {
+    cursor: pointer;
+    color: white;
+    text-decoration: underline;
+}
+
+.comContainer {
+    display: flex;
+    flex-direction: column;
+    padding: 3em;
+    background-color: rgba(40, 40, 50, 0.80);
+    border: solid 0.01em lightblue;
+    margin: 2% 0% 2% 0%;
+}
+
+.email {
+    font-size: 0.75em;
+    color: lightblue;
+    font-family: sans-serif;
+    margin-top: 2%;
+    margin-bottom: 2%;
+}
+
